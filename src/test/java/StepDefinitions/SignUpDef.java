@@ -1,4 +1,4 @@
 package StepDefinitions;
 
-public class Stepdef {
+public class SignUpDef {
 }
