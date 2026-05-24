@@ -1,28 +1,29 @@
 package StepDefinitions;
 
+import Pages.HomePage;
 import io.cucumber.java.en.*;
 
-public class LoginStepDef {
+public class LoginStepDef extends Base{
 
     @Given("user navigates to the application")
     public void user_navigates_to_the_application() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        homePage.getWelcomeMessage();
+
     }
     @When("user clicks login")
     public void user_clicks_login() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        homePage.clickLoginButton();
     }
     @When("user logs in with {string} and {string}")
-    public void user_logs_in_with_and(String string, String string2) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void user_logs_in_with_and(String username, String password) {
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickLogin();
     }
     @Then("user should see welcome message containing {string}")
     public void user_should_see_welcome_message_containing(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        welcomePage.getWelcomeMessage();
+        welcomePage.clickMenuButton();
     }
 }
 

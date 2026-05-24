@@ -17,7 +17,7 @@ public class WelcomePage {
     @FindBy(xpath = "//p[contains(.,\"Here's who's working today\")]")
     WebElement welcomeMessage;
 
-    @FindBy(xpath = "button[@class=\"user-pill open\"]")
+    @FindBy(xpath = "button//button[contains(@class,'user-pill') and contains(.,'Menu')]")
     WebElement nkosiButton;
 
     @FindBy(xpath = "//button[@class='user-pill open']//span[text()='Nkosi']")
@@ -34,7 +34,7 @@ public class WelcomePage {
         return welcomeMessage.getText();
     }
 
-    public void clickNkosiButton(){
+    public void clickMenuButton(){
         wait.until(ExpectedConditions.elementToBeClickable(nkosiButton)).click();
     }
 
